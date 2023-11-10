@@ -1,0 +1,66 @@
+.invalidado {
+  border: 3px solid red;
+  color: red;
+}
+
+
+div{
+    text-align: center;
+    padding: 5%;
+    width: 100%;
+    background: rgb(0, 0, 0,50%);
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 10px;
+}
+
+h4{
+    color: white;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}
+
+input{
+    width: 20rem;
+    padding: 2%;
+    margin-top: 10px;
+}
+
+button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    width: 20rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px;
+  }
+  
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  button:hover span {
+    padding-right: 25px;
+  }
+  
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="formulario">
+        <h4>Crea un chiste</h4>
+        <input type="text" placeholder="Introduce una frase..." #pregunta formControlName="pregunta" [ngClass]="{'invalidado': formulario.get('pregunta').invalid && formulario.get('pregunta').touched}">
+        <br>
+
+        <div *ngIf="formulario.get('pregunta').hasError('required') && formulario.get('pregunta').touched" class="error-message">
+            La pregunta es obligatoria.
+          </div>
+          <p *ngIf="formulario.get('pregunta').hasError('minlength') && formulario.get('pregunta').touched" class="error-message">
+            La pregunta debe tener al menos 6 caracteres.
+          </p>
+
+        <input type="text" placeholder="Introduce una respuesta..." #respuesta formControlName="respuesta" [ngClass]="{'invalidado': formulario.get('respuesta').invalid && formulario.get('respuesta').touched}">
+        <br>
+        
+        <div *ngIf="formulario.get('respuesta').hasError('required') && formulario.get('respuesta').touched" class="error-message">
+            La respuesta es obligatoria.
+          </div>
+          <p *ngIf="formulario.get('respuesta').hasError('minlength') && formulario.get('respuesta').touched" class="error-message">
+            La respuesta debe tener al menos 6 caracteres.
+          </p>
+
+        <button (click)="crearBroma(pregunta.value, respuesta.value)"><span>Crear Chiste</span></button>
+    </form>
+</div>
